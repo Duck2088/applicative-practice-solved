@@ -2,10 +2,14 @@ import { data } from "../data/data";
 
 // SPACE DATA EXERCISE 5
 // Return an array with all Planets' names with a massValue greater or equal to a given number (1-7)
+// Use Array.prototype.filter and Array.prototype.map instead of a for loop
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithMassValue(data, number) {
   // Your code goes here...
+  return data.planets
+    .filter(planet => planet.mass && planet.mass.massValue >= number)
+    .map(planet => planet.name);
 }
 
 
